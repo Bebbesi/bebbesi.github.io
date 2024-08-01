@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Cskins.exe" version="1.0.0.0" publicKeyToken="3cea5b67a36c7ad2" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Cskins" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Cskins.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cskins.exe" size="13744">
+      <assemblyIdentity name="Cskins" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>G5Qi76DkgpA80GXLjXDaSYL3W/+20cqucUu3QAhR9ak=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Cskins.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+CM46OnHRrXZXNLMx7+U3V3iubiYL//d8hGOR13lDhU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP\aless" issuerKeyHash="16f542cf186adb3272a82a2eeadac2849283809f" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>eJRy96LC6EG1TCwvAivFKCXDzSzRWR2B4vohFa2UQaw=</DigestValue></Reference></SignedInfo><SignatureValue>SEIfQoEJFe1eQ1KPwBY7HOuOxgBRuWYldzEtutWlxJgB91aeTKLE+weW42GyqfN0NIzOWtYI1DNUbU8iEorSfQCEOL2vVI8luIsaWI+eli3HqJkzwqY96AN3y+AI6tIcp5IIDU53IuvNsk/uYRd1/kxqCCidTWiJuAIO+k58gGA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>nTH2Nf6D7bj3uujN59R83IzP7m+g3IlyS14vkecEa0ED7zG8Fe9i5Af/dUUbBjZcIzkjLcYG7L0a9VUIV38kq7IogQ3UB+Im+3pfu2eVcpo55C1pNZLiXfgqlaAQH0BtzmJX+hJSnoSsGdxZKhPP1jbyryxTT634XhWsz7bYtDE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="ac4194ad1521fae2811d59d12ccdc32528c52b022f2c4cb541e8c2a2f7729478" Description="" Url=""><as:assemblyIdentity name="Cskins.exe" version="1.0.0.0" publicKeyToken="3cea5b67a36c7ad2" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP\aless</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>d/3eOFIXNfkZGzExTMw5uZlnya6oeMVChIevlfVWQn4=</DigestValue></Reference></SignedInfo><SignatureValue>M/ww7e8qB3+4IKQMIew/7YSntnWDVFW//v7bbMC+QEbZ+xT0ICPpI4qVGmpE+dhcvlyvMyX6DPGnLOSzeR3FjIQ5lyfrJGXCtyf/Nfl4PdSofFBhTPNHW4DHGLDvHlOtz0LArf6nI4RNCrJ87I1BbribQyAYbo0i7rKhFG2Xa8w=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>nTH2Nf6D7bj3uujN59R83IzP7m+g3IlyS14vkecEa0ED7zG8Fe9i5Af/dUUbBjZcIzkjLcYG7L0a9VUIV38kq7IogQ3UB+Im+3pfu2eVcpo55C1pNZLiXfgqlaAQH0BtzmJX+hJSnoSsGdxZKhPP1jbyryxTT634XhWsz7bYtDE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQNGGdFXoiFJ5KABYLkKyZ+DANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoARABFAFMASwBUAE8AUABcAGEAbABlAHMAczAeFw0yNDA4MDEyMjQ4MTFaFw0yNTA4MDIwNDQ4MTFaMCUxIzAhBgNVBAMeGgBEAEUAUwBLAFQATwBQAFwAYQBsAGUAcwBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCdMfY1/oPtuPe66M3n1HzcjM/ub6DciXJLXi+R5wRrQQPvMbwV72LkB/91RRsGNlwjOSMtxgbsvRr1VQhXfySrsiiBDdQH4ib7el+7Z5VymjnkLWk1kuJd+CqVoBAfQG3OYlf6ElKehKwZ3FkqE8/WNvKvLFNPrfheFazPtti0MQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBADjRE6qWQcY9ARrF3WUb+xdci4ZfYLKksukLYuGsrSUxEtCKd7RoqZHDSFJtIV9I9TO8XLAqgNrvURfDQU5ZzRqkilOugOW3lku2KofrBwdRgRP7aizxyMRgq03yRo1kpyej+DaBSq9w/oWsizplcfgLORW2PJqHJ64C6xRFgKc7</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
