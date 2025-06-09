@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebbesi - Personal Portfolio</title>
+    <meta name="description" content="Personal portfolio of Bebbesi - Developer, Content Creator, and AI Enthusiast. Explore my projects and get in touch.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wave-container" id="waveContainer"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Bebbesi</div>
+            <div class="nav-links">
+                <a href="#home" onclick="scrollToSection('home')">
+                    <span data-en="Home" data-it="Home" data-de="Startseite" data-zh="首页" data-ja="ホーム">Home</span>
+                </a>
+                <a href="#about" onclick="scrollToSection('about')">
+                    <span data-en="About Me" data-it="Chi Sono" data-de="Über mich" data-zh="关于我" data-ja="私について">About Me</span>
+                </a>
+                <a href="#projects" onclick="scrollToSection('projects')">
+                    <span data-en="Projects" data-it="Progetti" data-de="Projekte" data-zh="项目" data-ja="プロジェクト">Projects</span>
+                </a>
+                <a href="#contact" onclick="scrollToSection('contact')">
+                    <span data-en="Contact Me" data-it="Contattami" data-de="Kontakt" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
+                </a>
+                <div class="lang-dropdown">
+                    <button class="lang-button" onclick="toggleLanguageDropdown()">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-content" id="langDropdown">
+                        <button onclick="changeLanguage('en')">🇺🇸 English</button>
+                        <button onclick="changeLanguage('it')">🇮🇹 Italiano</button>
+                        <button onclick="changeLanguage('de')">🇩🇪 Deutsch</button>
+                        <button onclick="changeLanguage('zh')">🇨🇳 中文</button>
+                        <button onclick="changeLanguage('ja')">🇯🇵 日本語</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="home-content">
+            <h1 class="main-title">Bebbesi</h1>
+            <div class="home-text">
+                <p class="learn-more">
+                    <span data-en="Learn more about me" data-it="Scopri di più su di me" data-de="Erfahre mehr über mich" data-zh="了解更多关于我" data-ja="私についてもっと知る">Learn more about me</span>
+                </p>
+                <button class="explore-btn" onclick="scrollToSection('about')">
+                    <span data-en="Explore" data-it="Esplora" data-de="Erkunden" data-zh="探索" data-ja="探索">Explore</span>
+                </button>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@bebbesii" target="_blank" rel="noopener noreferrer" class="social-youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bebbesii/" target="_blank" rel="noopener noreferrer" class="social-instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://steamcommunity.com/id/bebbesi/" target="_blank" rel="noopener noreferrer" class="social-steam">
+                        <i class="fab fa-steam"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-content">
+            <h2>
+                <span data-en="About Me" data-it="Chi Sono" data-de="Über mich" data-zh="关于我" data-ja="私について">About Me</span>
+            </h2>
+            <p class="about-text">
+                <span data-en="Hello! I'm Bebbesi, a {age} years old developer born in 2008. I have a passion for coding, skiing, and cars. Currently, I speak Italian and English fluently, but I'm actively learning other languages to expand my communication skills. I know how to create Discord bots and working with the Gemini API for various projects. In my free time, I enjoy playing rhythm games like Osu! (particularly mania mode) and Rhythia, which help me stay sharp and focused."
+                      data-it="Ciao! Sono Bebbesi, uno sviluppatore di {age} anni nato nel 2008. Ho una passione per la programmazione, lo sci e le automobili. Attualmente parlo fluentemente italiano e inglese, ma sto imparando attivamente altre lingue per ampliare le mie capacità comunicative. So creare bot per Discord e lavoro con l'API Gemini per vari progetti. Nel tempo libero, mi piace giocare a giochi ritmici come Osu! (in particolare la modalità mania) e Rhythia, che mi aiutano a rimanere concentrato e mentalmente agile."
+                      data-de="Hallo! Ich bin Bebbesi, ein {age} Jahre alter Entwickler, geboren im Jahr 2008. Ich habe eine Leidenschaft für Programmieren, Skifahren und Autos. Derzeit spreche ich fließend Italienisch und Englisch, lerne aber aktiv weitere Sprachen, um meine Kommunikationsfähigkeiten zu erweitern. Ich kann Discord-Bots erstellen und arbeite mit der Gemini-API an verschiedenen Projekten. In meiner Freizeit spiele ich gerne Rhythmusspiele wie Osu! (insbesondere den Mania-Modus) und Rhythia, um konzentriert und geistig fit zu bleiben."
+                      data-zh="你好！我是Bebbesi，一名出生于2008年、{age}岁的开发者。我热爱编程、滑雪和汽车。目前我能流利地说意大利语和英语，同时也在积极学习其他语言以提升沟通能力。我擅长制作Discord机器人，并使用Gemini API进行各种项目。在空闲时间，我喜欢玩节奏类游戏，比如Osu!（特别是mania模式）和Rhythia，这些游戏有助于我保持专注和敏锐。"
+                      data-ja="こんにちは！私はBebbesi、2008年生まれの{age}歳の開発者です。プログラミング、スキー、そして車に情熱を持っています。現在はイタリア語と英語を流暢に話し、さらに他の言語も積極的に学んでコミュニケーション能力を高めています。Discordのボットを作成したり、さまざまなプロジェクトでGemini APIを使ったりすることができます。暇なときは、Osu!（特にmaniaモード）やRhythiaのようなリズムゲームを楽しんでおり、集中力と鋭さを保つのに役立っています。">
+                    Hello! I'm Bebbesi, a 17 years old developer born in 2008. I have a passion for coding, skiing, and cars. Currently, I speak Italian and English fluently, but I'm actively learning other languages to expand my communication skills. I specialize in creating Discord bots and working with the Gemini API for various projects. In my free time, I enjoy playing rhythm games like Osu! (particularly mania mode) and Rhythia, which help me stay sharp and focused.
+                </span>
+            </p>
+            <button class="see-projects-btn" onclick="scrollToSection('projects')">
+                <span data-en="See my Projects" data-it="Vedi i miei Progetti" data-de="Meine Projekte ansehen" data-zh="查看我的项目" data-ja="私のプロジェクトを見る">See my Projects</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="projects-content">
+            <h2>
+                <span data-en="Projects" data-it="Progetti" data-de="Projekte" data-zh="项目" data-ja="プロジェクト">Projects</span>
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="window.open('https://bebbesi.com/rhythia-ai', '_blank')">
+                    <h3>Rhythia AI</h3>
+                    <p>
+                        <span data-en="AI assistant for Rhythia, Not affiliated with Rhythia"
+                              data-it="Assistente AI per Rhythia, Non affiliato con Rhythia"
+                              data-de="KI-Assistent für Rhythia, Nicht mit Rhythia verbunden"
+                              data-zh="Rhythia的AI助手，与Rhythia无关"
+                              data-ja="RhythiaのAIアシスタント、Rhythiaとは無関係">
+                            AI assistant for Rhythia, Not affiliated with Rhythia
+                        </span>
+                    </p>
+                    <div class="project-link">
+                        <i class="fas fa-link"></i>
+                        rhythia.ai
+                    </div>
+                    <div class="project-status">
+                        <span class="status-label">
+                            <span data-en="Status:" data-it="Stato:" data-de="Status:" data-zh="状态：" data-ja="ステータス：">Status:</span>
+                        </span>
+                        <span class="status-value">
+                            <span data-en="Coming soon" data-it="Prossimamente" data-de="Demnächst" data-zh="即将推出" data-ja="近日公開">Coming soon</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <button class="contact-btn" onclick="scrollToSection('contact')">
+                <span data-en="Contact Me" data-it="Contattami" data-de="Kontaktiere mich" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <h2>
+                <span data-en="Contact Me" data-it="Contattami" data-de="Kontakt" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
+            </h2>
+            <div class="contact-buttons">
+                <button class="discord-btn" onclick="showDiscordModal()">
+                    <i class="fab fa-discord"></i>
+                    Discord
+                </button>
+                <a href="mailto:bebbesiii@gmail.com" class="email-btn">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Modal -->
+    <div id="discordModal" class="modal" onclick="hideDiscordModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="hideDiscordModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Discord</h3>
+            <p>
+                <span data-en="Discord ID:" data-it="ID Discord:" data-de="Discord ID:" data-zh="Discord ID:" data-ja="Discord ID:">Discord ID:</span>
+            </p>
+            <p class="discord-id">.steksi.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
