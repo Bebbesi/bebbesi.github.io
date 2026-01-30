@@ -1,1 +1,1 @@
-la droga uccide
+dokaj
