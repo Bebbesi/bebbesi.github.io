@@ -1,1 +1,1 @@
-dokaj
+doka
