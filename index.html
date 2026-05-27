@@ -1,170 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebbesi - Personal Portfolio</title>
-    <meta name="description" content="Personal portfolio of Bebbesi - Developer, Content Creator, and AI Enthusiast. Explore my projects and get in touch.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wz~ • Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d14;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 60%);
+      font-family: 'Nunito', sans-serif;
+    }
+
+    /* ── Card ── */
+    .card {
+      width: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #18182a;
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 8px 40px rgba(0,0,0,0.55),
+        0 0 60px rgba(139, 92, 246, 0.12);
+      position: relative;
+      animation: cardIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Banner ── */
+    .banner {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+      position: relative;
+    }
+
+    .banner-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, #18182a 100%);
+    }
+
+    /* ── Avatar area ── */
+    .avatar-row {
+      padding: 0 14px;
+      position: relative;
+      margin-top: -36px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .avatar-wrap {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: 4px solid #18182a;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+      transition: box-shadow 0.3s;
+    }
+
+    .avatar-wrap:hover {
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.9), 0 0 18px rgba(139,92,246,0.4);
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* status badge */
+    .status-dot {
+      position: absolute;
+      bottom: 4px; right: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #3ba55d;
+      border: 2px solid #18182a;
+      z-index: 3;
+    }
+
+    .location-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 11px;
+      color: #b9bcd6;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .location-pill svg { flex-shrink: 0; }
+
+    .add-status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 11px;
+      color: #b9bcd6;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      transition: background 0.2s, border-color 0.2s;
+      margin-bottom: 4px;
+    }
+
+    .add-status:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(139,92,246,0.5);
+    }
+
+    .add-status svg { flex-shrink: 0; }
+
+    /* ── Body ── */
+    .body {
+      padding: 10px 14px 14px;
+    }
+
+    .username {
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    .username span {
+      color: #a78bfa;
+    }
+
+    .display-icon {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 4px;
+      opacity: 0.7;
+      font-size: 13px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #7c7f99;
+      margin-top: 1px;
+      font-weight: 600;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 10px 0;
+    }
+
+    /* ── Badges ── */
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+    }
+
+    .badge:hover { transform: scale(1.25) rotate(-5deg); }
+
+    /* ── Buttons ── */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.18s, filter 0.18s, box-shadow 0.18s;
+      letter-spacing: 0.2px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+    }
+
+    .btn:active {
+      transform: translateY(0px);
+      filter: brightness(0.95);
+    }
+
+    .btn-spotify {
+      background: linear-gradient(135deg, #1db954 0%, #17a349 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(29,185,84,0.3);
+    }
+
+    .btn-steam {
+      background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+      color: #c7d5e0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      border: 1px solid rgba(102,192,244,0.2);
+    }
+
+    .btn-osu {
+      background: linear-gradient(135deg, #ff66ab 0%, #e0509a 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(255,102,171,0.35);
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(220,39,67,0.35);
+    }
+
+    .btn svg, .btn img {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── Annotation (monitor arrow) ── */
+    .annotation {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .annotation-text {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: #fff;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+      transform: rotate(-4deg);
+      display: block;
+    }
+
+    .annotation-arrow {
+      font-size: 20px;
+      transform: rotate(10deg) scaleX(-1);
+      display: inline-block;
+      margin-right: 4px;
+    }
+  </style>
 </head>
 <body>
-    <div class="wave-container" id="waveContainer"></div>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Bebbesi</div>
-            <div class="nav-links">
-                <a href="#home" onclick="scrollToSection('home')">
-                    <span data-en="Home" data-it="Home" data-de="Startseite" data-zh="首页" data-ja="ホーム">Home</span>
-                </a>
-                <a href="#about" onclick="scrollToSection('about')">
-                    <span data-en="About Me" data-it="Chi Sono" data-de="Über mich" data-zh="关于我" data-ja="私について">About Me</span>
-                </a>
-                <a href="#projects" onclick="scrollToSection('projects')">
-                    <span data-en="Projects" data-it="Progetti" data-de="Projekte" data-zh="项目" data-ja="プロジェクト">Projects</span>
-                </a>
-                <a href="#contact" onclick="scrollToSection('contact')">
-                    <span data-en="Contact Me" data-it="Contattami" data-de="Kontakt" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
-                </a>
-                <div class="lang-dropdown">
-                    <button class="lang-button" onclick="toggleLanguageDropdown()">
-                        <i class="fas fa-globe"></i>
-                        <span id="currentLang">EN</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="lang-content" id="langDropdown">
-                        <button onclick="changeLanguage('en')">🇺🇸 English</button>
-                        <button onclick="changeLanguage('it')">🇮🇹 Italiano</button>
-                        <button onclick="changeLanguage('de')">🇩🇪 Deutsch</button>
-                        <button onclick="changeLanguage('zh')">🇨🇳 中文</button>
-                        <button onclick="changeLanguage('ja')">🇯🇵 日本語</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="home-content">
-            <h1 class="main-title">Bebbesi</h1>
-            <div class="home-text">
-                <p class="learn-more">
-                    <span data-en="Learn more about me" data-it="Scopri di più su di me" data-de="Erfahre mehr über mich" data-zh="了解更多关于我" data-ja="私についてもっと知る">Learn more about me</span>
-                </p>
-                <button class="explore-btn" onclick="scrollToSection('about')">
-                    <span data-en="Explore" data-it="Esplora" data-de="Erkunden" data-zh="探索" data-ja="探索">Explore</span>
-                </button>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@bebbesii" target="_blank" rel="noopener noreferrer" class="social-youtube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/bebbesii/" target="_blank" rel="noopener noreferrer" class="social-instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://steamcommunity.com/id/bebbesi/" target="_blank" rel="noopener noreferrer" class="social-steam">
-                        <i class="fab fa-steam"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+  <!-- Banner -->
+  <div class="banner-wrap">
+    <img class="banner" src="monitor.jpg" alt="banner" onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)';this.style.height='110px';this.removeAttribute('src')" />
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="about-content">
-            <h2>
-                <span data-en="About Me" data-it="Chi Sono" data-de="Über mich" data-zh="关于我" data-ja="私について">About Me</span>
-            </h2>
-            <p class="about-text">
-                <span data-en="Hello! I'm Bebbesi, a {age} years old developer born in 2008. I have a passion for coding, skiing, and cars. Currently, I speak Italian and English fluently, but I'm actively learning other languages to expand my communication skills. I know how to create Discord bots and working with the Gemini API for various projects. In my free time, I enjoy playing rhythm games like Osu! (particularly mania mode) and Rhythia, which help me stay sharp and focused."
-                      data-it="Ciao! Sono Bebbesi, uno sviluppatore di {age} anni nato nel 2008. Ho una passione per la programmazione, lo sci e le automobili. Attualmente parlo fluentemente italiano e inglese, ma sto imparando attivamente altre lingue per ampliare le mie capacità comunicative. So creare bot per Discord e lavoro con l'API Gemini per vari progetti. Nel tempo libero, mi piace giocare a giochi ritmici come Osu! (in particolare la modalità mania) e Rhythia, che mi aiutano a rimanere concentrato e mentalmente agile."
-                      data-de="Hallo! Ich bin Bebbesi, ein {age} Jahre alter Entwickler, geboren im Jahr 2008. Ich habe eine Leidenschaft für Programmieren, Skifahren und Autos. Derzeit spreche ich fließend Italienisch und Englisch, lerne aber aktiv weitere Sprachen, um meine Kommunikationsfähigkeiten zu erweitern. Ich kann Discord-Bots erstellen und arbeite mit der Gemini-API an verschiedenen Projekten. In meiner Freizeit spiele ich gerne Rhythmusspiele wie Osu! (insbesondere den Mania-Modus) und Rhythia, um konzentriert und geistig fit zu bleiben."
-                      data-zh="你好！我是Bebbesi，一名出生于2008年、{age}岁的开发者。我热爱编程、滑雪和汽车。目前我能流利地说意大利语和英语，同时也在积极学习其他语言以提升沟通能力。我擅长制作Discord机器人，并使用Gemini API进行各种项目。在空闲时间，我喜欢玩节奏类游戏，比如Osu!（特别是mania模式）和Rhythia，这些游戏有助于我保持专注和敏锐。"
-                      data-ja="こんにちは！私はBebbesi、2008年生まれの{age}歳の開発者です。プログラミング、スキー、そして車に情熱を持っています。現在はイタリア語と英語を流暢に話し、さらに他の言語も積極的に学んでコミュニケーション能力を高めています。Discordのボットを作成したり、さまざまなプロジェクトでGemini APIを使ったりすることができます。暇なときは、Osu!（特にmaniaモード）やRhythiaのようなリズムゲームを楽しんでおり、集中力と鋭さを保つのに役立っています。">
-                    Hello! I'm Bebbesi, a 17 years old developer born in 2008. I have a passion for coding, skiing, and cars. Currently, I speak Italian and English fluently, but I'm actively learning other languages to expand my communication skills. I specialize in creating Discord bots and working with the Gemini API for various projects. In my free time, I enjoy playing rhythm games like Osu! (particularly mania mode) and Rhythia, which help me stay sharp and focused.
-                </span>
-            </p>
-            <button class="see-projects-btn" onclick="scrollToSection('projects')">
-                <span data-en="See my Projects" data-it="Vedi i miei Progetti" data-de="Meine Projekte ansehen" data-zh="查看我的项目" data-ja="私のプロジェクトを見る">See my Projects</span>
-            </button>
-        </div>
-    </section>
+  </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="projects-content">
-            <h2>
-                <span data-en="Projects" data-it="Progetti" data-de="Projekte" data-zh="项目" data-ja="プロジェクト">Projects</span>
-            </h2>
-            <div class="projects-grid">
-                <div class="project-card" onclick="window.open('https://bebbesi.xyz/rhythia-ai', '_blank')">
-                    <h3>Rhythia AI</h3>
-                    <p>
-                        <span data-en="AI assistant for Rhythia, Not affiliated with Rhythia"
-                              data-it="Assistente AI per Rhythia, Non affiliato con Rhythia"
-                              data-de="KI-Assistent für Rhythia, Nicht mit Rhythia verbunden"
-                              data-zh="Rhythia的AI助手，与Rhythia无关"
-                              data-ja="RhythiaのAIアシスタント、Rhythiaとは無関係">
-                            AI assistant for Rhythia, Not affiliated with Rhythia
-                        </span>
-                    </p>
-                    <div class="project-link">
-                        <i class="fas fa-link"></i>
-                        ai-rhythia.ai
-                    </div>
-                    <div class="project-status">
-                        <span class="status-label">
-                            <span data-en="Status:" data-it="Stato:" data-de="Status:" data-zh="状态：" data-ja="ステータス：">Status:</span>
-                        </span>
-                        <span class="status-value">
-                            <span data-en="Not available" data-it="Non disponibile" data-de="Nicht verfügbar" data-zh="无法使用" data-ja="利用不可">Not Available</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <button class="contact-btn" onclick="scrollToSection('contact')">
-                <span data-en="Contact Me" data-it="Contattami" data-de="Kontaktiere mich" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
-            </button>
-        </div>
-    </section>
+  <!-- Avatar row -->
+  <div class="avatar-row">
+    <div class="avatar-wrap">
+      <img src="pfp.png" alt="pfp" onerror="this.style.background='linear-gradient(135deg,#a78bfa,#ec4899)';this.removeAttribute('src')" />
+      <div class="status-dot"></div>
+    </div>
+    <div class="location-pill">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Opsec, Larp
+    </div>
+  </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="contact-content">
-            <h2>
-                <span data-en="Contact Me" data-it="Contattami" data-de="Kontakt" data-zh="联系我" data-ja="お問い合わせ">Contact Me</span>
-            </h2>
-            <div class="contact-buttons">
-                <button class="discord-btn" onclick="showDiscordModal()">
-                    <i class="fab fa-discord"></i>
-                    Discord
-                </button>
-                <a href="mailto:bebbesiii@gmail.com" class="email-btn">
-                    <i class="fas fa-envelope"></i>
-                    Email
-                </a>
-            </div>
-        </div>
-    </section>
+  <div class="body">
+    <div class="username"><span>Wz~</span></div>
+    <div class="tag">frequenters • ?</div>
 
-    <!-- Discord Modal -->
-    <div id="discordModal" class="modal" onclick="hideDiscordModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="hideDiscordModal()">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3>Discord</h3>
-            <p>
-                <span data-en="Discord ID:" data-it="ID Discord:" data-de="Discord ID:" data-zh="Discord ID:" data-ja="Discord ID:">Discord ID:</span>
-            </p>
-            <p class="discord-id">.steksi.</p>
-        </div>
+    <div class="divider"></div>
+
+    <!-- Badges -->
+    <div class="badges">
+      <span style="font-size:12px; font-weight:800; color:#a78bfa; letter-spacing:0.3px;">un monitor e mezzo</span>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Social Buttons -->
+    <div class="buttons">
+
+      <!-- Spotify -->
+      <a class="btn btn-spotify" href="https://open.spotify.com/user/312oq5i2nlgbyawj5yg4hblbpvju?si=bedb3a9c23ea4794" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 1 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 0 1 .257 1.073zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 0 1-1.955.612z"/>
+        </svg>
+        Spotify
+      </a>
+
+      <!-- Steam -->
+      <a class="btn btn-steam" href="https://steamcommunity.com/id/bebbesi/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.187.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
+        </svg>
+        Steam
+      </a>
+
+      <!-- osu! -->
+      <a class="btn btn-osu" href="https://osu.ppy.sh/users/36705844" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 20.571c-4.73 0-8.571-3.841-8.571-8.571S7.27 3.429 12 3.429 20.571 7.27 20.571 12 16.73 20.571 12 20.571zm0-13.714a5.143 5.143 0 1 0 0 10.286A5.143 5.143 0 0 0 12 6.857zm0 7.715a2.571 2.571 0 1 1 0-5.143 2.571 2.571 0 0 1 0 5.143z"/>
+        </svg>
+        osu!
+      </a>
+
+      <!-- Instagram -->
+      <a class="btn btn-instagram" href="https://www.instagram.com/wzwwznd/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+        Instagram
+      </a>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
